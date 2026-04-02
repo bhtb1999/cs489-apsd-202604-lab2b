@@ -56,5 +56,8 @@ jobs:
       - name: Create GitHub release and upload JAR
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: v1.0.${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
+          name: Release v1.0.${{ github.run_number }}
           files: target/*.jar
           generate_release_notes: true
